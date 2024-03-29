@@ -1,0 +1,25 @@
+送りたい文字列の周囲を "+" で枠のように囲んで装飾するプログラム。
+
+入力例 1 では "S" という文字列を送ります。
+この文字を枠で囲み装飾すると、以下のようになります。
++++
++S+
++++
+
+入力は以下のフォーマットで与えられます。
+
+S
+・枠で囲んで装飾したい文字列 S が与えられます。
+・入力は 1 行となり、末尾に改行が 1 つ入ります。
+
+
+def decorate_string(string)
+  decorated_string = "+#{'+' * string.length}+\n"
+  decorated_string << "+#{string}+\n"
+  decorated_string << "+#{'+' * string.length}+\n"
+  decorated_string
+end
+
+input_string = gets.chomp
+puts decorate_string(input_string)
+
